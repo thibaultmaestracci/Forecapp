@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11126B3EEEF0026326B /* AppDelegate.swift */; };
 		3DB6E11426B3EEEF0026326B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11326B3EEEF0026326B /* SceneDelegate.swift */; };
-		3DB6E11626B3EEEF0026326B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11526B3EEEF0026326B /* ViewController.swift */; };
+		3DB6E11626B3EEEF0026326B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11526B3EEEF0026326B /* WeatherViewController.swift */; };
 		3DB6E11926B3EEEF0026326B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6E11726B3EEEF0026326B /* Main.storyboard */; };
 		3DB6E11B26B3EEF00026326B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6E11A26B3EEF00026326B /* Assets.xcassets */; };
 		3DB6E11E26B3EEF00026326B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6E11C26B3EEF00026326B /* LaunchScreen.storyboard */; };
 		3DB6E12926B3EEF00026326B /* ForecappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E12826B3EEF00026326B /* ForecappTests.swift */; };
 		3DB6E13426B3EEF00026326B /* ForecappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E13326B3EEF00026326B /* ForecappUITests.swift */; };
+		3DB6E14526B3F8270026326B /* GlobalWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14426B3F8270026326B /* GlobalWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		3DB6E10E26B3EEEF0026326B /* Forecapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB6E11126B3EEEF0026326B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB6E11326B3EEEF0026326B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DB6E11526B3EEEF0026326B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DB6E11526B3EEEF0026326B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		3DB6E11826B3EEEF0026326B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DB6E11A26B3EEF00026326B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB6E11D26B3EEF00026326B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		3DB6E13326B3EEF00026326B /* ForecappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecappUITests.swift; sourceTree = "<group>"; };
 		3DB6E13526B3EEF00026326B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB6E14126B3F15C0026326B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3DB6E14426B3F8270026326B /* GlobalWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,10 @@
 		3DB6E11026B3EEEF0026326B /* Forecapp */ = {
 			isa = PBXGroup;
 			children = (
+				3DB6E14326B3F80A0026326B /* ViewModel */,
+				3DB6E14226B3F6800026326B /* View */,
 				3DB6E11126B3EEEF0026326B /* AppDelegate.swift */,
 				3DB6E11326B3EEEF0026326B /* SceneDelegate.swift */,
-				3DB6E11526B3EEEF0026326B /* ViewController.swift */,
-				3DB6E11726B3EEEF0026326B /* Main.storyboard */,
 				3DB6E11A26B3EEF00026326B /* Assets.xcassets */,
 				3DB6E11C26B3EEF00026326B /* LaunchScreen.storyboard */,
 				3DB6E11F26B3EEF00026326B /* Info.plist */,
@@ -128,6 +130,23 @@
 				3DB6E13526B3EEF00026326B /* Info.plist */,
 			);
 			path = ForecappUITests;
+			sourceTree = "<group>";
+		};
+		3DB6E14226B3F6800026326B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6E11526B3EEEF0026326B /* WeatherViewController.swift */,
+				3DB6E11726B3EEEF0026326B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DB6E14326B3F80A0026326B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6E14426B3F8270026326B /* GlobalWeatherViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DB6E11626B3EEEF0026326B /* ViewController.swift in Sources */,
+				3DB6E14526B3F8270026326B /* GlobalWeatherViewModel.swift in Sources */,
+				3DB6E11626B3EEEF0026326B /* WeatherViewController.swift in Sources */,
 				3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */,
 				3DB6E11426B3EEEF0026326B /* SceneDelegate.swift in Sources */,
 			);
@@ -441,7 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832TNJL38F;
 				INFOPLIST_FILE = Forecapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,7 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.linecheck.Forecapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -461,7 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832TNJL38F;
 				INFOPLIST_FILE = Forecapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,7 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.linecheck.Forecapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
