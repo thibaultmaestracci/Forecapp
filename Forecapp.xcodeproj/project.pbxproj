@@ -49,6 +49,7 @@
 		3DB6E12F26B3EEF00026326B /* ForecappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB6E13326B3EEF00026326B /* ForecappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecappUITests.swift; sourceTree = "<group>"; };
 		3DB6E13526B3EEF00026326B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB6E14126B3F15C0026326B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		3DB6E10526B3EEEF0026326B = {
 			isa = PBXGroup;
 			children = (
+				3DB6E14126B3F15C0026326B /* README.md */,
 				3DB6E11026B3EEEF0026326B /* Forecapp */,
 				3DB6E12726B3EEF00026326B /* ForecappTests */,
 				3DB6E13226B3EEF00026326B /* ForecappUITests */,
