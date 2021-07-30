@@ -21,7 +21,7 @@ class GlobalWeatherViewModel {
             DispatchQueue.main.async {
                 self.city = result.station
                 self.temp = String(result.temperature)
-                self.delegate?.displayData(self.city, self.temp)
+                self.delegate?.displayData(self.city, self.temp + "°c")
             }
         }
         }

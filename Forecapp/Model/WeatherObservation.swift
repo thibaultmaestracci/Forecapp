@@ -10,7 +10,7 @@ import Foundation
 struct WeatherObservation: Decodable {
     var station: String
     var temperature: Int
-    var pressure: Int
+    var pressure: Double
 }
 
 
