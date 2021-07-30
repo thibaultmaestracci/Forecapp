@@ -4,17 +4,25 @@
 //
 //  Created by thunderduck on 30/07/2021.
 //
+import Foundation
 
 class GlobalWeatherViewModel {
     
     var delegate: ViewControllerDelegate?
     
-    var city = "Montpellier"
-    var temp = "27°c"
+    var city = "-"
+    var temp = "-"
     
     func update() {
-        // update from api
-        
-        delegate?.displayData(city, temp)
-    }
+        let api = ForecaClient()
+        api.fetchObservationMontpellier { weatherResults in
+            guard let result = weatherResults?.observations.first else {return}
+            
+            DispatchQueue.main.async {
+                self.city = result.station
+                self.temp = String(result.temperature)
+                self.delegate?.displayData(self.city, self.temp)
+            }
+        }
+        }
 }

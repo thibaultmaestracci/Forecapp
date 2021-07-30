@@ -16,6 +16,8 @@
 		3DB6E12926B3EEF00026326B /* ForecappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E12826B3EEF00026326B /* ForecappTests.swift */; };
 		3DB6E13426B3EEF00026326B /* ForecappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E13326B3EEF00026326B /* ForecappUITests.swift */; };
 		3DB6E14526B3F8270026326B /* GlobalWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14426B3F8270026326B /* GlobalWeatherViewModel.swift */; };
+		3DB6E14826B400AC0026326B /* WeatherObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14726B400AC0026326B /* WeatherObservation.swift */; };
+		3DB6E14A26B401B40026326B /* ForecaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14926B401B40026326B /* ForecaClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		3DB6E13526B3EEF00026326B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB6E14126B3F15C0026326B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3DB6E14426B3F8270026326B /* GlobalWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalWeatherViewModel.swift; sourceTree = "<group>"; };
+		3DB6E14726B400AC0026326B /* WeatherObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherObservation.swift; sourceTree = "<group>"; };
+		3DB6E14926B401B40026326B /* ForecaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecaClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		3DB6E11026B3EEEF0026326B /* Forecapp */ = {
 			isa = PBXGroup;
 			children = (
+				3DB6E14626B400780026326B /* Model */,
 				3DB6E14326B3F80A0026326B /* ViewModel */,
 				3DB6E14226B3F6800026326B /* View */,
 				3DB6E11126B3EEEF0026326B /* AppDelegate.swift */,
@@ -147,6 +152,15 @@
 				3DB6E14426B3F8270026326B /* GlobalWeatherViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DB6E14626B400780026326B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6E14726B400AC0026326B /* WeatherObservation.swift */,
+				3DB6E14926B401B40026326B /* ForecaClient.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +297,8 @@
 				3DB6E11626B3EEEF0026326B /* WeatherViewController.swift in Sources */,
 				3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */,
 				3DB6E11426B3EEEF0026326B /* SceneDelegate.swift in Sources */,
+				3DB6E14A26B401B40026326B /* ForecaClient.swift in Sources */,
+				3DB6E14826B400AC0026326B /* WeatherObservation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
