@@ -18,11 +18,11 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var temperature: UILabel!
     
-    var viewModel = GlobalWeatherViewModel()
+    var viewModel: GlobalWeatherViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
+        //viewModel.delegate = self
     }
 
     @IBAction func updateAction(_ sender: Any) {
