@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  AppCoordinator.swift
 //  Forecapp
 //
 //  Created by thunderduck on 02/08/2021.
@@ -26,14 +26,13 @@ class AppCoordinator: Coordinator {
     }
     
     func goToWeatherView() {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
-        let weatherVC = storyboard.instantiateViewController(identifier: "main.storyboard.weatherVC") as! WeatherViewController
         
-        let weatherViewModel = GlobalWeatherViewModel.init()
+        let homeViewModel = HomeViewModel()
+        let homeViewController = HomeViewController()
         
-        weatherVC.viewModel = weatherViewModel
-        weatherViewModel.delegate = weatherVC
+        homeViewController.viewModel = homeViewModel
+        homeViewModel.delegate = homeViewController
         
-        navigationController.pushViewController(weatherVC, animated: true)
+        navigationController.pushViewController(homeViewController, animated: true)
     }
 }

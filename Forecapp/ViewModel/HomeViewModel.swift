@@ -6,22 +6,24 @@
 //
 import Foundation
 
-class GlobalWeatherViewModel {
+class HomeViewModel {
     
-    var delegate: ViewControllerDelegate?
+    weak var delegate: ViewControllerDelegate?
     
     var city = "-"
     var temp = "-"
+    var pres = "-"
     
     func update() {
         let api = ForecaClient()
-        api.fetchObservationMontpellier { weatherResults in
+        api.fetchObservationMontpellier { [unowned self] weatherResults in
             guard let result = weatherResults?.observations.first else {return}
             
             DispatchQueue.main.async {
                 self.city = result.station
                 self.temp = String(result.temperature)
-                self.delegate?.displayData(self.city, self.temp + "°c")
+                self.pres = String(Int(result.pressure))
+                self.delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa")
             }
         }
         }
