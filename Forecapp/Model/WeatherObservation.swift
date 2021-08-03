@@ -11,6 +11,7 @@ struct WeatherObservation: Decodable {
     var station: String
     var temperature: Int
     var pressure: Double
+    var symbol: String
 }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DA162E026B979F600CFCB2F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA162DF26B979F600CFCB2F /* ListViewModel.swift */; };
+		3DA162E226B97A0E00CFCB2F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA162E126B97A0E00CFCB2F /* ListViewController.swift */; };
 		3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11126B3EEEF0026326B /* AppDelegate.swift */; };
 		3DB6E11626B3EEEF0026326B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11526B3EEEF0026326B /* HomeViewController.swift */; };
 		3DB6E11B26B3EEF00026326B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6E11A26B3EEF00026326B /* Assets.xcassets */; };
@@ -16,6 +18,9 @@
 		3DB6E14826B400AC0026326B /* WeatherObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14726B400AC0026326B /* WeatherObservation.swift */; };
 		3DB6E14A26B401B40026326B /* ForecaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14926B401B40026326B /* ForecaClient.swift */; };
 		3DC59FD226B7F65D00F8CA3B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC59FD126B7F65D00F8CA3B /* AppCoordinator.swift */; };
+		7ECDD8125B86E58DB67544B9 /* Pods_Forecapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606AA54C3693EEBE5DACC314 /* Pods_Forecapp.framework */; };
+		B3DEE799E9830AE7828522BF /* Pods_Forecapp_ForecappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21B6A6BA28B5A2B6FD49A4D /* Pods_Forecapp_ForecappUITests.framework */; };
+		C7F456263E4FE4AA0FB5492C /* Pods_ForecappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E962462B880FAC2A32162B /* Pods_ForecappTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0099E9DF3B2CB7B78EE851AE /* Pods-Forecapp-ForecappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecapp-ForecappUITests.debug.xcconfig"; path = "Target Support Files/Pods-Forecapp-ForecappUITests/Pods-Forecapp-ForecappUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		103818B1C2C947ED6BE31D51 /* Pods-ForecappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForecappTests.release.xcconfig"; path = "Target Support Files/Pods-ForecappTests/Pods-ForecappTests.release.xcconfig"; sourceTree = "<group>"; };
+		162A0B8F77F836830C53CD26 /* Pods-Forecapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecapp.release.xcconfig"; path = "Target Support Files/Pods-Forecapp/Pods-Forecapp.release.xcconfig"; sourceTree = "<group>"; };
+		3DA162DF26B979F600CFCB2F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		3DA162E126B97A0E00CFCB2F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3DB6E10E26B3EEEF0026326B /* Forecapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB6E11126B3EEEF0026326B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB6E11526B3EEEF0026326B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +62,12 @@
 		3DB6E14726B400AC0026326B /* WeatherObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherObservation.swift; sourceTree = "<group>"; };
 		3DB6E14926B401B40026326B /* ForecaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecaClient.swift; sourceTree = "<group>"; };
 		3DC59FD126B7F65D00F8CA3B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		606AA54C3693EEBE5DACC314 /* Pods_Forecapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E962462B880FAC2A32162B /* Pods_ForecappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForecappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87F07F0E64AF0800231C26C /* Pods-ForecappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForecappTests.debug.xcconfig"; path = "Target Support Files/Pods-ForecappTests/Pods-ForecappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA0C2A4294C258AC98589F3D /* Pods-Forecapp-ForecappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecapp-ForecappUITests.release.xcconfig"; path = "Target Support Files/Pods-Forecapp-ForecappUITests/Pods-Forecapp-ForecappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E21B6A6BA28B5A2B6FD49A4D /* Pods_Forecapp_ForecappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecapp_ForecappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8396EF4DE25371CC362C65D /* Pods-Forecapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecapp.debug.xcconfig"; path = "Target Support Files/Pods-Forecapp/Pods-Forecapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ECDD8125B86E58DB67544B9 /* Pods_Forecapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F456263E4FE4AA0FB5492C /* Pods_ForecappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DEE799E9830AE7828522BF /* Pods_Forecapp_ForecappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +106,8 @@
 				3DB6E12726B3EEF00026326B /* ForecappTests */,
 				3DB6E13226B3EEF00026326B /* ForecappUITests */,
 				3DB6E10F26B3EEEF0026326B /* Products */,
+				B737508131E5C5A6A0D110C6 /* Pods */,
+				B5871458479F4FF0C931027E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB6E11526B3EEEF0026326B /* HomeViewController.swift */,
+				3DA162E126B97A0E00CFCB2F /* ListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB6E14426B3F8270026326B /* HomeViewModel.swift */,
+				3DA162DF26B979F600CFCB2F /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -165,6 +188,30 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		B5871458479F4FF0C931027E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				606AA54C3693EEBE5DACC314 /* Pods_Forecapp.framework */,
+				E21B6A6BA28B5A2B6FD49A4D /* Pods_Forecapp_ForecappUITests.framework */,
+				77E962462B880FAC2A32162B /* Pods_ForecappTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B737508131E5C5A6A0D110C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8396EF4DE25371CC362C65D /* Pods-Forecapp.debug.xcconfig */,
+				162A0B8F77F836830C53CD26 /* Pods-Forecapp.release.xcconfig */,
+				0099E9DF3B2CB7B78EE851AE /* Pods-Forecapp-ForecappUITests.debug.xcconfig */,
+				BA0C2A4294C258AC98589F3D /* Pods-Forecapp-ForecappUITests.release.xcconfig */,
+				B87F07F0E64AF0800231C26C /* Pods-ForecappTests.debug.xcconfig */,
+				103818B1C2C947ED6BE31D51 /* Pods-ForecappTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DB6E13826B3EEF00026326B /* Build configuration list for PBXNativeTarget "Forecapp" */;
 			buildPhases = (
+				2A46BE20DB42B1BD40C0B03A /* [CP] Check Pods Manifest.lock */,
 				3DB6E10A26B3EEEF0026326B /* Sources */,
 				3DB6E10B26B3EEEF0026326B /* Frameworks */,
 				3DB6E10C26B3EEEF0026326B /* Resources */,
+				37A731B45C896EB52404F238 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +238,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DB6E13B26B3EEF00026326B /* Build configuration list for PBXNativeTarget "ForecappTests" */;
 			buildPhases = (
+				D757B87651F5E810FD4B44BD /* [CP] Check Pods Manifest.lock */,
 				3DB6E12026B3EEF00026326B /* Sources */,
 				3DB6E12126B3EEF00026326B /* Frameworks */,
 				3DB6E12226B3EEF00026326B /* Resources */,
@@ -207,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DB6E13E26B3EEF00026326B /* Build configuration list for PBXNativeTarget "ForecappUITests" */;
 			buildPhases = (
+				758286C8F5E1CF754FDBE9FF /* [CP] Check Pods Manifest.lock */,
 				3DB6E12B26B3EEF00026326B /* Sources */,
 				3DB6E12C26B3EEF00026326B /* Frameworks */,
 				3DB6E12D26B3EEF00026326B /* Resources */,
+				6A150744F4CF5E0817851A6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +340,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A46BE20DB42B1BD40C0B03A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Forecapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A731B45C896EB52404F238 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forecapp/Pods-Forecapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forecapp/Pods-Forecapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forecapp/Pods-Forecapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A150744F4CF5E0817851A6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forecapp-ForecappUITests/Pods-Forecapp-ForecappUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forecapp-ForecappUITests/Pods-Forecapp-ForecappUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forecapp-ForecappUITests/Pods-Forecapp-ForecappUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		758286C8F5E1CF754FDBE9FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Forecapp-ForecappUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D757B87651F5E810FD4B44BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ForecappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DB6E10A26B3EEEF0026326B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,9 +450,11 @@
 			files = (
 				3DB6E14526B3F8270026326B /* HomeViewModel.swift in Sources */,
 				3DB6E11626B3EEEF0026326B /* HomeViewController.swift in Sources */,
+				3DA162E026B979F600CFCB2F /* ListViewModel.swift in Sources */,
 				3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */,
 				3DB6E14A26B401B40026326B /* ForecaClient.swift in Sources */,
 				3DB6E14826B400AC0026326B /* WeatherObservation.swift in Sources */,
+				3DA162E226B97A0E00CFCB2F /* ListViewController.swift in Sources */,
 				3DC59FD226B7F65D00F8CA3B /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +609,7 @@
 		};
 		3DB6E13926B3EEF00026326B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8396EF4DE25371CC362C65D /* Pods-Forecapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,6 +630,7 @@
 		};
 		3DB6E13A26B3EEF00026326B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 162A0B8F77F836830C53CD26 /* Pods-Forecapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +651,7 @@
 		};
 		3DB6E13C26B3EEF00026326B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87F07F0E64AF0800231C26C /* Pods-ForecappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -514,6 +674,7 @@
 		};
 		3DB6E13D26B3EEF00026326B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 103818B1C2C947ED6BE31D51 /* Pods-ForecappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +697,7 @@
 		};
 		3DB6E13F26B3EEF00026326B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0099E9DF3B2CB7B78EE851AE /* Pods-Forecapp-ForecappUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,6 +718,7 @@
 		};
 		3DB6E14026B3EEF00026326B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0C2A4294C258AC98589F3D /* Pods-Forecapp-ForecappUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

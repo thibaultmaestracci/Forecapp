@@ -6,37 +6,102 @@
 //
 
 import Foundation
+import Alamofire
+
+protocol ForecaClientDelegate: AnyObject {
+    func clientUpdated()
+}
+
+struct Token: Decodable {
+    var access_token: String
+    var expires_in: Int
+    var token_type: String
+}
+
+struct User: Codable {
+    var user: String
+    var password: String
+}
 
 class ForecaClient {
     
-    private var task: URLSessionDataTask?
+    private var weatherStore = [WeatherObservation]()
+    var delegates = [ForecaClientDelegate]()
     
-    func fetchObservationMontpellier(completionHandler: @escaping(WeatherResults?) -> Void) {
-        let url = URL(string: "https://pfa.foreca.com/api/v1/observation/latest/102992166")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wZmEuZm9yZWNhLmNvbVwvYXV0aG9yaXplXC90b2tlbiIsImlhdCI6MTYyNzg5NjkyMywiZXhwIjoxNjI4NTAxNzIzLCJuYmYiOjE2Mjc4OTY5MjMsImp0aSI6ImMwOGFkNzQ4NTM1Y2E5YjYiLCJzdWIiOiJsaW5lY2hlY2siLCJmbXQiOiJYRGNPaGpDNDArQUxqbFlUdGpiT2lBPT0ifQ.j_hqZQj8dHOBiEvUt_OBndAbMKvNNQfPsk2UOrfKa6g", forHTTPHeaderField: "Authorization")
-        
-        let session = URLSession(configuration: .default)
-        task = session.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else {
-                completionHandler(nil)
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completionHandler(nil)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let results = try decoder.decode(WeatherResults.self, from: data)
-                completionHandler(results)
-            } catch {
-                print ("ForecaClient - JSON decoder error")
+    let apiusername = "linecheck"
+    let apipassword = "Uj3W3Dr6Lmt6"
+    var token : Token?
+    
+    func getWeather() -> [WeatherObservation] {
+        return weatherStore
+    }
+     
+    func fetchWithAlmofire() {
+        if token != nil {
+            fetchWeather()
+        } else {
+            self.getToken {
+                self.fetchWeather()
             }
         }
-        task?.resume()
+    }
+    
+    private func getToken(completionHandler: @escaping () -> Void){
+        let login = User(user: apiusername, password: apipassword)
+
+        AF.request("https://pfa.foreca.com/authorize/token?expire_hours=2", method: .post, parameters: login, encoder: JSONParameterEncoder.default).response { response in
+                switch (response.result) {
+                    case .success( _):
+                        do {
+                            let result = try JSONDecoder().decode(Token.self, from: response.data!)
+                            self.token = result
+                            DispatchQueue.main.async {
+                                completionHandler()
+                            }
+                        } catch let error as NSError {
+                            print("Failed to load: \(error.localizedDescription)")
+                        }
+
+                     case .failure(let error):
+                        print("Request error: \(error.localizedDescription)")
+                 }
+            
+               }
+        
+        
+    }
+    
+    
+    
+    private func fetchWeather() {
+        guard let authorization = token?.access_token else {return}
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + authorization
+        ]
+        
+        AF.request("https://pfa.foreca.com/api/v1/observation/latest/102992166", headers: headers)
+            .validate()
+            .responseJSON { response in
+                switch (response.result) {
+                    case .success( _):
+
+                        do {
+                            let results = try JSONDecoder().decode(WeatherResults.self, from: response.data!)
+                            self.weatherStore = results.observations
+                            DispatchQueue.main.async {
+                                for (delegate) in self.delegates {
+                                    delegate.clientUpdated()
+                                }
+                                
+                            }
+
+                        } catch let error as NSError {
+                            print("Failed to load: \(error.localizedDescription)")
+                        }
+
+                     case .failure(let error):
+                        print("Request error: \(error.localizedDescription)")
+                 }
+            }
     }
 }

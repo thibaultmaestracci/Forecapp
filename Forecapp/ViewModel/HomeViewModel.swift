@@ -6,25 +6,36 @@
 //
 import Foundation
 
+
+// MARK: PROTOCOL
+protocol HomeViewModelDelegate: AnyObject {
+    func displayData(_ city: String, _ temperature: String, _ pressure: String, weatherImage: String)
+}
+
+// MARK: ViewModel
 class HomeViewModel {
     
-    weak var delegate: ViewControllerDelegate?
+    weak var delegate: HomeViewModelDelegate?
+    var api: ForecaClient!
     
     var city = "-"
     var temp = "-"
     var pres = "-"
     
     func update() {
-        let api = ForecaClient()
-        api.fetchObservationMontpellier { [unowned self] weatherResults in
-            guard let result = weatherResults?.observations.first else {return}
-            
-            DispatchQueue.main.async {
-                self.city = result.station
-                self.temp = String(result.temperature)
-                self.pres = String(Int(result.pressure))
-                self.delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa")
-            }
-        }
-        }
+        
+        api.fetchWithAlmofire()
+    }
+}
+
+extension HomeViewModel: ForecaClientDelegate {
+    func clientUpdated() {
+        guard let result = api.getWeather().first else {return}
+        city = result.station
+        temp = String(result.temperature)
+        pres = String(Int(result.pressure))
+        delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa", weatherImage: "sun.max")
+    }
+    
+    
 }
