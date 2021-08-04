@@ -1,6 +1,16 @@
 
 # Forecapp demo project
 
-### TODO :
-1. Basic weather app from foreca api
-2. MVVM Architecture with basic coordinator
+## A demo weather app ( using foreca api )
+
+This demo app is build with MVVM + Cordinator architecture
+delegate patern between View and ViewModel
+closure between Model/api and ViewModel
+a Mock of the foreca client is used for basic Test
+
+use of Almofire :
+pod 'Alamofire', '~> 5.4'
+
+PRIVATE REPO :
+personal user and pass used in forecaclient
+
