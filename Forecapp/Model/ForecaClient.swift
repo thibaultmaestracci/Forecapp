@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol ForecaClientDelegate: AnyObject {
-    func clientUpdated()
-}
-
 struct Token: Decodable {
     var access_token: String
     var expires_in: Int
@@ -23,10 +19,9 @@ struct User: Codable {
     var password: String
 }
 
-class ForecaClient {
+class ForecaClient: APIClient {
     
     private var weatherStore = [WeatherObservation]()
-    var delegates = [ForecaClientDelegate]()
     
     let apiusername = "linecheck"
     let apipassword = "Uj3W3Dr6Lmt6"
@@ -36,12 +31,12 @@ class ForecaClient {
         return weatherStore
     }
      
-    func fetchWithAlmofire() {
+    func fetchWithAlmofire(completionHandler: @escaping () -> Void) {
         if token != nil {
-            fetchWeather()
+            fetchWeather(completionHandler: completionHandler)
         } else {
             self.getToken {
-                self.fetchWeather()
+                self.fetchWeather(completionHandler: completionHandler)
             }
         }
     }
@@ -50,30 +45,26 @@ class ForecaClient {
         let login = User(user: apiusername, password: apipassword)
 
         AF.request("https://pfa.foreca.com/authorize/token?expire_hours=2", method: .post, parameters: login, encoder: JSONParameterEncoder.default).response { response in
-                switch (response.result) {
-                    case .success( _):
-                        do {
-                            let result = try JSONDecoder().decode(Token.self, from: response.data!)
-                            self.token = result
-                            DispatchQueue.main.async {
-                                completionHandler()
-                            }
-                        } catch let error as NSError {
-                            print("Failed to load: \(error.localizedDescription)")
+            switch (response.result) {
+                case .success( _):
+                    do {
+                        let result = try JSONDecoder().decode(Token.self, from: response.data!)
+                        self.token = result
+                        DispatchQueue.main.async {
+                            completionHandler()
                         }
+                    } catch let error as NSError {
+                        print("Failed to load: \(error.localizedDescription)")
+                    }
 
-                     case .failure(let error):
-                        print("Request error: \(error.localizedDescription)")
-                 }
-            
-               }
+                 case .failure(let error):
+                    print("Request error: \(error.localizedDescription)")
+             }
         
-        
+           }
     }
     
-    
-    
-    private func fetchWeather() {
+    private func fetchWeather(completionHandler: @escaping () -> Void) {
         guard let authorization = token?.access_token else {return}
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + authorization
@@ -89,10 +80,7 @@ class ForecaClient {
                             let results = try JSONDecoder().decode(WeatherResults.self, from: response.data!)
                             self.weatherStore = results.observations
                             DispatchQueue.main.async {
-                                for (delegate) in self.delegates {
-                                    delegate.clientUpdated()
-                                }
-                                
+                                completionHandler()
                             }
 
                         } catch let error as NSError {

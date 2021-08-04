@@ -16,26 +16,32 @@ protocol HomeViewModelDelegate: AnyObject {
 class HomeViewModel {
     
     weak var delegate: HomeViewModelDelegate?
-    var api: ForecaClient!
+    var api: APIClient?
     
     var city = "-"
     var temp = "-"
     var pres = "-"
     
     func update() {
-        
-        api.fetchWithAlmofire()
-    }
-}
-
-extension HomeViewModel: ForecaClientDelegate {
-    func clientUpdated() {
-        guard let result = api.getWeather().first else {return}
-        city = result.station
-        temp = String(result.temperature)
-        pres = String(Int(result.pressure))
-        delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa", weatherImage: "sun.max")
+        guard let api = api else { return }
+        api.fetchWithAlmofire {
+            guard let result = api.getWeather().first else {return}
+            self.updateFrom(result)
+        }
     }
     
-    
+    func updateFrom(_ observation: WeatherObservation) {
+        city = observation.station
+        temp = String(observation.temperature)
+        pres = String(Int(observation.pressure))
+        var symbol = String()
+        switch observation.symbol {
+        case "d000": symbol = "sun.max"
+        case "d220": symbol = "cloud.sun.rain"
+        case "d430": symbol = "cloud.sleet"
+        default: symbol = "icloud"
+            print("symb= \(observation.symbol)")
+        }
+        delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa", weatherImage: symbol)
+    }
 }
