@@ -11,8 +11,6 @@
 		3D130DC026BA944B00EF1E1E /* HomeViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D130DBF26BA944B00EF1E1E /* HomeViewModelTestCase.swift */; };
 		3D130DC226BA951500EF1E1E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D130DC126BA951500EF1E1E /* APIClient.swift */; };
 		3D130DC426BAC4FF00EF1E1E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D130DC326BAC4FF00EF1E1E /* Launch Screen.storyboard */; };
-		3DA162E026B979F600CFCB2F /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA162DF26B979F600CFCB2F /* ListViewModel.swift */; };
-		3DA162E226B97A0E00CFCB2F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA162E126B97A0E00CFCB2F /* ListViewController.swift */; };
 		3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11126B3EEEF0026326B /* AppDelegate.swift */; };
 		3DB6E11626B3EEEF0026326B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E11526B3EEEF0026326B /* HomeViewController.swift */; };
 		3DB6E11B26B3EEF00026326B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6E11A26B3EEF00026326B /* Assets.xcassets */; };
@@ -21,6 +19,7 @@
 		3DB6E14826B400AC0026326B /* WeatherObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14726B400AC0026326B /* WeatherObservation.swift */; };
 		3DB6E14A26B401B40026326B /* ForecaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6E14926B401B40026326B /* ForecaClient.swift */; };
 		3DC59FD226B7F65D00F8CA3B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC59FD126B7F65D00F8CA3B /* AppCoordinator.swift */; };
+		3DD2452126DE3D2300440A5C /* ForecaClientAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2452026DE3D2300440A5C /* ForecaClientAccount.swift */; };
 		7ECDD8125B86E58DB67544B9 /* Pods_Forecapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606AA54C3693EEBE5DACC314 /* Pods_Forecapp.framework */; };
 		B3DEE799E9830AE7828522BF /* Pods_Forecapp_ForecappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21B6A6BA28B5A2B6FD49A4D /* Pods_Forecapp_ForecappUITests.framework */; };
 		C7F456263E4FE4AA0FB5492C /* Pods_ForecappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E962462B880FAC2A32162B /* Pods_ForecappTests.framework */; };
@@ -51,8 +50,6 @@
 		3D130DBF26BA944B00EF1E1E /* HomeViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTestCase.swift; sourceTree = "<group>"; };
 		3D130DC126BA951500EF1E1E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3D130DC326BAC4FF00EF1E1E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
-		3DA162DF26B979F600CFCB2F /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		3DA162E126B97A0E00CFCB2F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		3DB6E10E26B3EEEF0026326B /* Forecapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB6E11126B3EEEF0026326B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB6E11526B3EEEF0026326B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +65,7 @@
 		3DB6E14726B400AC0026326B /* WeatherObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherObservation.swift; sourceTree = "<group>"; };
 		3DB6E14926B401B40026326B /* ForecaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecaClient.swift; sourceTree = "<group>"; };
 		3DC59FD126B7F65D00F8CA3B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3DD2452026DE3D2300440A5C /* ForecaClientAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecaClientAccount.swift; sourceTree = "<group>"; };
 		606AA54C3693EEBE5DACC314 /* Pods_Forecapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E962462B880FAC2A32162B /* Pods_ForecappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForecappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87F07F0E64AF0800231C26C /* Pods-ForecappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForecappTests.debug.xcconfig"; path = "Target Support Files/Pods-ForecappTests/Pods-ForecappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			children = (
 				3D130DC326BAC4FF00EF1E1E /* Launch Screen.storyboard */,
 				3DB6E11526B3EEEF0026326B /* HomeViewController.swift */,
-				3DA162E126B97A0E00CFCB2F /* ListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				3DB6E14426B3F8270026326B /* HomeViewModel.swift */,
-				3DA162DF26B979F600CFCB2F /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,6 +179,7 @@
 			children = (
 				3DB6E14726B400AC0026326B /* WeatherObservation.swift */,
 				3DB6E14926B401B40026326B /* ForecaClient.swift */,
+				3DD2452026DE3D2300440A5C /* ForecaClientAccount.swift */,
 				3D130DBD26BA938F00EF1E1E /* MockForecaClient.swift */,
 				3D130DC126BA951500EF1E1E /* APIClient.swift */,
 			);
@@ -461,11 +458,10 @@
 				3DB6E14526B3F8270026326B /* HomeViewModel.swift in Sources */,
 				3DB6E11626B3EEEF0026326B /* HomeViewController.swift in Sources */,
 				3D130DC226BA951500EF1E1E /* APIClient.swift in Sources */,
-				3DA162E026B979F600CFCB2F /* ListViewModel.swift in Sources */,
+				3DD2452126DE3D2300440A5C /* ForecaClientAccount.swift in Sources */,
 				3DB6E11226B3EEEF0026326B /* AppDelegate.swift in Sources */,
 				3DB6E14A26B401B40026326B /* ForecaClient.swift in Sources */,
 				3DB6E14826B400AC0026326B /* WeatherObservation.swift in Sources */,
-				3DA162E226B97A0E00CFCB2F /* ListViewController.swift in Sources */,
 				3DC59FD226B7F65D00F8CA3B /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,7 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.linecheck.Forecapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -656,7 +652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.linecheck.Forecapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

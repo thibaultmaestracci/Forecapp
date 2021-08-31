@@ -14,24 +14,38 @@ class HomeViewController: UIViewController {
     private var weatherImage: UIImageView!
     private var tempLabel: UILabel!
     private var presLabel: UILabel!
-    private var updateButton: UIButton!
+
     
     var viewModel: HomeViewModel!
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .white
+        
+        // MARK:- NavBar
+        
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        title = "Forecapp"
+        
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
+        navigationItem.leftBarButtonItem = refreshButton
+
+        
+        // MARK:- View Setup
         
         cityLabel = UILabel()
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         cityLabel.textAlignment = .center
         cityLabel.font = UIFont.systemFont(ofSize: 42)
-        cityLabel.textColor = .white
+        cityLabel.textColor = .black
         view.addSubview(cityLabel)
         
-        let image = UIImage(systemName: "questionmark")
+        let image = UIImage()
         weatherImage = UIImageView(image: image)
-        weatherImage.tintColor = .white
+        weatherImage.tintColor = .black
         weatherImage.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(weatherImage)
@@ -40,27 +54,18 @@ class HomeViewController: UIViewController {
         tempLabel.translatesAutoresizingMaskIntoConstraints = false
         tempLabel.textAlignment = .center
         tempLabel.font = UIFont.systemFont(ofSize: 42)
-        tempLabel.textColor = .white
+        tempLabel.textColor = .black
         view.addSubview(tempLabel)
         
         presLabel = UILabel()
         presLabel.translatesAutoresizingMaskIntoConstraints = false
         presLabel.textAlignment = .center
         presLabel.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
-        presLabel.textColor = .lightGray
+        presLabel.textColor = .darkGray
         view.addSubview(presLabel)
         
-        updateButton = UIButton(type: .system)
-        updateButton.translatesAutoresizingMaskIntoConstraints = false
-        updateButton.setTitle("UPDATE", for: .normal)
-        updateButton.backgroundColor = .white
-        updateButton.layer.cornerRadius = 5
-        view.addSubview(updateButton)
-        
-        updateButton.addTarget(self, action: #selector(updateAction), for: .touchUpInside)
-        
         NSLayoutConstraint.activate([
-            cityLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 42),
+            cityLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 142),
             cityLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 10),
             cityLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -10),
             
@@ -76,12 +81,7 @@ class HomeViewController: UIViewController {
             presLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: 42),
             presLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 10),
             presLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -10),
-            
-            updateButton.topAnchor.constraint(equalTo: presLabel.bottomAnchor, constant: 42),
-            updateButton.heightAnchor.constraint(equalToConstant: 40),
-            updateButton.widthAnchor.constraint(equalToConstant: 200),
-            updateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
+  
         ])
     }
     
@@ -91,13 +91,15 @@ class HomeViewController: UIViewController {
         viewModel.update()
     }
 
-    @objc func updateAction(_ sender: UIButton) {
+    
+    
+    @objc private func refresh() {
         self.cityLabel.text = "-"
         self.tempLabel.text = "-"
         self.presLabel.text = "-"
         self.weatherImage.image = UIImage(systemName: "questionmark")
-        self.updateButton.setTitle("UPDATING ...", for: .normal)
         viewModel.update()
+        print("refresh tapped")
     }
     
 }
@@ -108,8 +110,7 @@ extension HomeViewController: HomeViewModelDelegate {
         self.cityLabel.text = city
         self.tempLabel.text = temperature
         self.presLabel.text = pressure
-        self.weatherImage.image = UIImage(systemName: weatherImage)
-        self.updateButton.setTitle("UPDATE", for: .normal)
+        self.weatherImage.image = UIImage(named: weatherImage)
     }
 }
 
