@@ -18,3 +18,4 @@ pod 'Alamofire', '~> 5.4'
 - Api Setup
 create a dev account on foreca api website https://corporate.foreca.com/en/foreca-weather-api
 log your credential in /Model/ForecaClientAccount
+
