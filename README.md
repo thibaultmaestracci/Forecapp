@@ -1,16 +1,21 @@
 
-# Forecapp demo project
+# Forecapp - basic weather app
 
 ## A demo weather app ( using foreca api )
 
-This demo app is build with MVVM + Cordinator architecture
-delegate patern between View and ViewModel
-closure between Model/api and ViewModel
-a Mock of the foreca client is used for basic Test
+- MVVM + Cordinator architecture
+- delegate pattern between View and ViewModel
+- closure between Model/api and ViewModel
+- Mock of the foreca client is used for basic Test
 
-use of Almofire :
+For now it display weather data for Montpellier, France
+Feel free to improve and pull request
+
+### Intallation
+- Almofire :
 pod 'Alamofire', '~> 5.4'
 
-PRIVATE REPO :
-personal user and pass used in forecaclient
+- Api Setup
+create a dev account on foreca api website https://corporate.foreca.com/en/foreca-weather-api
+log your credential in /Model/ForecaClientAccount
 

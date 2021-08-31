@@ -22,9 +22,8 @@ struct User: Codable {
 class ForecaClient: APIClient {
     
     private var weatherStore = [WeatherObservation]()
+    private var account = ForecaClientAccount()
     
-    let apiusername = "linecheck"
-    let apipassword = "Uj3W3Dr6Lmt6"
     var token : Token?
     
     func getWeather() -> [WeatherObservation] {
@@ -42,7 +41,7 @@ class ForecaClient: APIClient {
     }
     
     private func getToken(completionHandler: @escaping () -> Void){
-        let login = User(user: apiusername, password: apipassword)
+        let login = User(user: account.apiusername, password: account.apipassword)
 
         AF.request("https://pfa.foreca.com/authorize/token?expire_hours=2", method: .post, parameters: login, encoder: JSONParameterEncoder.default).response { response in
             switch (response.result) {
@@ -51,6 +50,7 @@ class ForecaClient: APIClient {
                         let result = try JSONDecoder().decode(Token.self, from: response.data!)
                         self.token = result
                         DispatchQueue.main.async {
+                            print(result)
                             completionHandler()
                         }
                     } catch let error as NSError {
@@ -69,6 +69,11 @@ class ForecaClient: APIClient {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + authorization
         ]
+        
+        // Montpellier 102992166
+        // Barcelona 103128760
+        // Paris 102988507
+        // los angeles 105368361
         
         AF.request("https://pfa.foreca.com/api/v1/observation/latest/102992166", headers: headers)
             .validate()

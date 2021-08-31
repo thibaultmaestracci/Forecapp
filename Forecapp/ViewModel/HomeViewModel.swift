@@ -34,14 +34,6 @@ class HomeViewModel {
         city = observation.station
         temp = String(observation.temperature)
         pres = String(Int(observation.pressure))
-        var symbol = String()
-        switch observation.symbol {
-        case "d000": symbol = "sun.max"
-        case "d220": symbol = "cloud.sun.rain"
-        case "d430": symbol = "cloud.sleet"
-        default: symbol = "icloud"
-            print("symb= \(observation.symbol)")
-        }
-        delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa", weatherImage: symbol)
+        delegate?.displayData(self.city, self.temp + "°c", self.pres + " hPa", weatherImage: observation.symbol)
     }
 }
