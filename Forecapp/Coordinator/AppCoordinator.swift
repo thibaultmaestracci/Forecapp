@@ -13,8 +13,11 @@ protocol Coordinator {
 
 class AppCoordinator: Coordinator {
     let window: UIWindow?
-    let detailViewModel = HomeViewModel()
-    let listViewModel = ListViewModel()
+    
+    private let homeViewModel = HomeViewModel()
+    private let homeViewController = HomeViewController()
+    private var navController = UINavigationController()
+    private let api = ForecaClient()
     
     init(window: UIWindow?) {
         self.window = window
@@ -22,59 +25,14 @@ class AppCoordinator: Coordinator {
     
     func start() {
         
-        // HOME
-        let homeViewModel = HomeViewModel()
-        let homeViewController = HomeViewController()
         homeViewController.viewModel = homeViewModel
-                
-        // SPLIT VIEW
-        let listViewController = ListViewController()
-        
-        listViewController.viewModel = listViewModel
-        listViewModel.appCoordinator = self
-        
-        //let detailViewModel = HomeViewModel()
-        let detailViewController = HomeViewController()
-        
-        detailViewController.viewModel = detailViewModel
-        
-        let listNavigationController = UINavigationController(rootViewController: listViewController)
-        let splitListViewController = UISplitViewController()
-        
-        splitListViewController.viewControllers = [listNavigationController,detailViewController]
-        splitListViewController.preferredDisplayMode = .allVisible
-        
-        
-        // API INJECTION
-        let api = ForecaClient()
-        
         homeViewModel.api = api
-        listViewModel.api = api
-        detailViewModel.api = api
         
+        navController = UINavigationController(rootViewController: homeViewController)
         
-        // MARK: Tab Bar Controller
-        homeViewController.tabBarItem.title = "HOME"
-        homeViewController.tabBarItem.image = UIImage(systemName: "cloud.sun")
-        
-        splitListViewController.tabBarItem.title = "LIST"
-        splitListViewController.tabBarItem.image = UIImage(systemName: "circle.dashed")
-        
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [
-            homeViewController,
-            splitListViewController
-        ]
-        
-        window?.rootViewController = tabBarController
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
     
-    func showDetailView(_ observation: WeatherObservation) {
-        
-        detailViewModel.updateFrom(observation)
-        
-        
-    }
+    
 }
